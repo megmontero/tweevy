@@ -59,9 +59,9 @@ def index(page=1):
         return redirect(url_for('index'))
     #news = models.News.query.paginate(page, POSTS_PER_PAGE, False).items
     #news = db.session.query(models.News.title, models.News.desc, models.News.image, models.News.url, db.func.sum(models.News.rank).label("rank")).group_by(models.News.id, models.News.title, models.News.desc, models.News.image, models.News.url).all()
-    news = db.session.query(models.News.title, models.News.desc,models.News.image, models.News.url, db.func.sum(models.News.rank).label("rank")).filter(
+    news = db.session.query(models.News.title, models.News.desc,models.News.image, models.News.url,models.News.tags, db.func.sum(models.News.rank).label("rank")).filter(
         models.News.title!=None).group_by(models.News.title, models.News.desc, models.News.image
-, models.News.url).order_by(db.func.sum(models.News.rank).desc()).yield_per(POSTS_PER_PAGE).all()
+, models.News.url,models.News.tags).order_by(db.func.sum(models.News.rank).desc()).yield_per(POSTS_PER_PAGE).all()
     #ln = len(models.News.query.all())
     ln = len(news)
     has_more = (page * POSTS_PER_PAGE) < ln

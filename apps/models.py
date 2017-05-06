@@ -62,5 +62,6 @@ class News(db.Model):
     image = Column(db.String(400))
     rank = Column(db.Integer)
     title = Column(db.String(200))
+    tags = Column(db.String(400))
     desc = Column(db.String(400))
 
