@@ -64,4 +64,4 @@ class News(db.Model):
     title = Column(db.String(200))
     tags = Column(db.String(400))
     desc = Column(db.String(400))
-
+    interval = Column(db.String(20))
