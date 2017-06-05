@@ -4,3 +4,4 @@ flask-login
 SQLAlchemy
 Flask-WTF
 facebook-sdk
+MySQL-python
