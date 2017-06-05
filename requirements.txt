@@ -2,3 +2,4 @@ Flask-OAuth
 Flask-SQLAlchemy
 flask-login
 SQLAlchemy
+Flask-WTF
